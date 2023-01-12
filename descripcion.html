@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="descripcion.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="img/logo_netflix.png" alt=""></a> <!-- Aqui va el logo del Netflix -->
+        <ul class="navigation">
+            <li><a href="">Home</a></li>
+            <li><a href="">TV Shows</a></li>
+            <li><a href="">Movies</a></li>
+            <li><a href="">Latest</a></li>
+            <li><a href="">My list</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </header>
+    <div class="banner">
+        <video src="img/intro.mp4" class="bg" autoplay="true"></video> <!-- Aqui va la foto de fonde de Alo -->
+        <div class="content">
+            <img src="img/name2.png" class="movieTitle" alt="">
+            <h4>
+                <span>2023</span>
+                <span><i>18+</i></span>
+                <span>Una eternidad</span>
+                <span>Action</span>
+            </h4>
+            <p>Alo y Uzi son amigos desde la infancia y no se imaginan como pareja. Sin embargo, cuando van en diferentes direcciones, se dan cuenta que tal vez estan hechos el uno para el otro .</p>
+            <div class="buttons">
+                <a href="#" onclick="toggleVideo();"> <i class="fa fa-play" aria-hidden="true"></i> Play</a> 
+                <a href="#"> <i class="fa fa-plus" aria-hidden="true"></i> My list</a> 
+            </div>
+        </div>
+        <a class="play" onclick="toggleVideo();"><img src="img/play.png">Watch Trailer</a>
+    </div>
+
+    <div class="trailer">
+        <video src="img/video.mp4" controls="true"></video>
+        <img src="img/close.png" class="close" onclick="toggleVideo();">
+    </div>
+
+    <script>
+        function toggleVideo() {
+            const trailer = document.querySelector('.trailer');
+            const video =document.querySelector('video');
+            trailer.classList.toggle('active')
+            video.currentTime = 0;
+            video.pause()
+        }
+    </script>
+
+</body>
+</html>
